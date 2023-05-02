@@ -3,14 +3,14 @@ import cls from './Weather.module.css'
 import Title from '../Title/Title'
 import Degree from '../Degree/Degree'
 
-import imgWeather from '../../img/cloudy-icon.png'
 import navIcon from '../../img/navigation-arrow.png'
+import clouds from '../../img/Clouds.png'
 
-const Weather = ({city, degreesCelsias}) => {
+const Weather = ({city, degreesCelsias, weather}) => {
     return (
         <div className={cls.weather}>
             <div className={cls.weatherImg}>
-                <img src={imgWeather.src} alt="" />
+                <img src={weather == "Clouds" ? clouds.src : ""} alt="" />
             </div>
             <Title>
                 {city}
