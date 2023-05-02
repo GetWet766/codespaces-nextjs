@@ -17,6 +17,7 @@
   background: transparent;
   border: none;
   outline: none;
+  font-weight: bold;
 }
 
 .searchInput::placeholder {

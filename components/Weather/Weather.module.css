@@ -24,6 +24,7 @@
 .celsius {
   margin-top: 15px;
   font-size: 70px;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: flex-start;
