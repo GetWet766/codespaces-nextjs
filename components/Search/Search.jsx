@@ -1,4 +1,5 @@
 import cls from './Search.module.css'
+
 import img from '../../img/search-icon.png'
 
 const Search = () => {
