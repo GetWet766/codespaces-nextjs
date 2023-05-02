@@ -9,7 +9,7 @@ function Home() {
   const [inputCity, setInputCity] = useState("")
   const [city, setCity] = useState("Москва")
   const [weather, setWeather] = useState("Clouds")
-  const [degreesCelsias, setDegreesCelsias] = useState("")
+  const [degreesCelsias, setDegreesCelsias] = useState("?")
 
   if (!used) {
     useEffect(() => {
