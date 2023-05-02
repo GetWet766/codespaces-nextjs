@@ -1,0 +1,8 @@
+.window {
+  width: 375px;
+  height: 812px;
+  background: #ffffff;
+  border-radius: 15px;
+  margin: 50px auto;
+  padding-top: 45px;
+}
