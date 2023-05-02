@@ -9,10 +9,10 @@ function searchSubmit(inputCity, setCity, setDegreesCelsias, setWeather) {
           return
         }
     
-        //setCity(inputCity)
-        console.log(json);
-        //setWeather(json.weather[0].main)
-        //setDegreesCelsias(parseInt(json.main.temp))
+        setCity(inputCity)
+        //console.log(json);
+        setWeather(json.weather[0].main)
+        setDegreesCelsias(parseInt(json.main.temp))
       })
       .catch(reason => console.log(reason))
 }

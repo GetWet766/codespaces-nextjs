@@ -4,21 +4,12 @@ import Weather from '../components/Weather/Weather'
 import getWeather from '../hooks/getWeather'
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
-var used = false
 
 function Home() {
   const [inputCity, setInputCity] = useState("")
   const [city, setCity] = useState("Москва")
   const [weather, setWeather] = useState("Clouds")
   const [degreesCelsias, setDegreesCelsias] = useState("?")
-
-  if (!used) {
-    useEffect(() => {
-      getWeather(city, setCity, setDegreesCelsias, setWeather)
-    })
-    used = true
-    console.log(used);
-  }
   
   return (
     <Window>
