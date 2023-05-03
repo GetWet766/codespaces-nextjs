@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.weatherImg img {
+  height: 100%;
+}
+
 .imgNavigation {
   margin-left: 10px;
   height: 20px;

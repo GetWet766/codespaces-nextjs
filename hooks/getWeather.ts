@@ -65,12 +65,12 @@ function getWeather({inputCity, lon, lat, setCity, setDegreesCelsias, setWeather
             console.log(json);
           if (json.cod === "404") return
       
+          setWeather(json.weather[0].icon)
           setCity(json.name)
-          setWeather(json.weather[0].main)
-          setDegreesCelsias(Math.round(json.main.temp))
           setAutoLocation(false)
-          setHumidity(Math.round(json.main.humidity))
+          setDegreesCelsias(Math.round(json.main.temp))
           setLocalTime(json.timezone)
+          setHumidity(Math.round(json.main.humidity))
         })
         .catch(reason => console.log(reason))
     if (!inputCity && lat && lon)
@@ -80,12 +80,12 @@ function getWeather({inputCity, lon, lat, setCity, setDegreesCelsias, setWeather
             console.log(json);
           if (json.cod === "404") return
       
+          setWeather(json.weather[0].icon)
           setCity(json.name)
-          setWeather(json.weather[0].main)
-          setDegreesCelsias(Math.round(json.main.temp))
           setAutoLocation(true)
-          setHumidity(Math.round(json.main.humidity))
+          setDegreesCelsias(Math.round(json.main.temp))
           setLocalTime(json.timezone)
+          setHumidity(Math.round(json.main.humidity))
         })
         .catch(reason => console.log(reason))
   }

@@ -5,29 +5,81 @@ import Degree from '../Degree/Degree'
 
 import navIcon from '../../img/navigation-arrow.png'
 
-import clear from '../../img/Clear.png'
-import clouds from '../../img/Clouds.png'
-import mist from '../../img/Mist.png'
-import snow from '../../img/Snow.png'
-import rain from '../../img/Rain.png'
+import clearDay from '../../img/01d.svg'
+import clearNight from '../../img/01n.svg'
+import fewCloudsDay from '../../img/02d.svg'
+import fewCloudsNight from '../../img/02n.svg'
+import cloudsDay from '../../img/03d.svg'
+import cloudsNight from '../../img/03n.svg'
+import brokenCloudsDay from '../../img/04d.svg'
+import brokenCloudsNight from '../../img/04n.svg'
+import smallRainDay from '../../img/09d.svg'
+import smallRainNight from '../../img/09n.svg'
+import rainDay from '../../img/10d.svg'
+import rainNight from '../../img/10n.svg'
+import thunderstormDay from '../../img/11d.svg'
+import thunderstormNight from '../../img/11n.svg'
+import snowDay from '../../img/13d.svg'
+import snowNight from '../../img/13n.svg'
+import mistDay from '../../img/50d.svg'
+import mistNight from '../../img/50n.svg'
 
 const Weather = ({city, degreesCelsias, weather, autoLocation, humidity, localTime}) => {
     var weaterImage
     switch (weather) {
-        case "Clear":
-            weaterImage = clear.src;
+        case "01d":
+            weaterImage = clearDay.src;
             break;
-        case "Clouds":
-            weaterImage = clouds.src;
+        case "01n":
+            weaterImage = clearNight.src;
             break;
-        case "Mist":
-            weaterImage = mist.src;
+        case "02d":
+            weaterImage = fewCloudsDay.src;
             break;
-        case "Snow":
-            weaterImage = snow.src;
+        case "02n":
+            weaterImage = fewCloudsNight.src;
             break;
-        case "Rain":
-            weaterImage = rain.src;
+        case "03d":
+            weaterImage = cloudsDay.src;
+            break;
+        case "03n":
+            weaterImage = cloudsNight.src;
+            break;
+        case "04d":
+            weaterImage = brokenCloudsDay.src;
+            break;
+        case "04n":
+            weaterImage = brokenCloudsNight.src;
+            break;
+        case "09d":
+            weaterImage = smallRainDay.src;
+            break;
+        case "09n":
+            weaterImage = smallRainNight.src;
+            break;
+        case "10d":
+            weaterImage = rainDay.src;
+            break;
+        case "10n":
+            weaterImage = rainNight.src;
+            break;
+        case "11d":
+            weaterImage = thunderstormDay.src;
+            break;
+        case "11n":
+            weaterImage = thunderstormNight.src;
+            break;
+        case "13d":
+            weaterImage = snowDay.src;
+            break;
+        case "13n":
+            weaterImage = snowNight.src;
+            break;
+        case "50d":
+            weaterImage = mistDay.src;
+            break;
+        case "50n":
+            weaterImage = mistNight.src;
             break;
         default:
             weaterImage = "";
