@@ -11,7 +11,7 @@ import mist from '../../img/Mist.png'
 import snow from '../../img/Snow.png'
 import rain from '../../img/Rain.png'
 
-const Weather = ({city, degreesCelsias, weather, autoLocation}) => {
+const Weather = ({city, degreesCelsias, weather, autoLocation, humidity}) => {
     var weaterImage
     switch (weather) {
         case "Clear":
@@ -40,11 +40,29 @@ const Weather = ({city, degreesCelsias, weather, autoLocation}) => {
             </div>
             <Title>
                 {city}
-                {autoLocation ? <img className={cls.imgNavigation} src={navIcon.src} alt="" /> : ""}
+                {autoLocation && <img className={cls.imgNavigation} src={navIcon.src} alt="" />}
             </Title>
             <div className={cls.celsius}>
                 {degreesCelsias}
                 <Degree/>
+            </div>
+            <div className={cls.information}>
+                <div>
+                    <div className={cls.titleCategory}>Время</div>
+                    <div className={cls.valueCategory}>11:25</div>
+                </div>
+                <div>
+                    <div className={cls.titleCategory}>Влажность</div>
+                    <div className={cls.valueCategory}>{humidity}</div>
+                </div>
+                <div>
+                    <div className={cls.titleCategory}>Дождь</div>
+                    <div className={cls.valueCategory}>58%</div>
+                </div>
+                <div>
+                    <div className={cls.titleCategory}>AQ</div>
+                    <div className={cls.valueCategory}>22</div>
+                </div>
             </div>
         </div>
       )
