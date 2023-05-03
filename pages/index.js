@@ -20,11 +20,11 @@ function Home() {
     },
      userDecisionTimeout: 5000,
   });
-  useEffect(() =>
+  useEffect(() => {
     !isGeolocationAvailable ? null :
       !isGeolocationEnabled ? null :
         coords ? getWeather("", setCity, setDegreesCelsias, setWeather, coords.latitude, coords.longitude) : null
-  , [isGeolocationAvailable])
+  }, [])
   
   return (
     <Window>
