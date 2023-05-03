@@ -69,13 +69,11 @@ const Weather = ({city, degreesCelsias, weather, autoLocation, humidity, localTi
 }
 
 function calcTime(offset) {
-    var d = new Date();
-
-    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-
-    var nd = new Date(utc + (1000*offset));
-
-    return nd.getHours() + ":" + nd.getMinutes();
+    if (offset === "?") return "00:00"
+    var d = new Date()
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000)
+    var nd = new Date(utc + (1000*offset))
+    return nd.toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" })
 }
 
 export default Weather
