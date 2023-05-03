@@ -24,7 +24,7 @@ import snowNight from '../../img/13n.svg'
 import mistDay from '../../img/50d.svg'
 import mistNight from '../../img/50n.svg'
 
-const Weather = ({city, degreesCelsias, weather, autoLocation, humidity, localTime}) => {
+const Weather = ({city, degreesCelsias, weather, autoLocation, humidity, localTime, rain}) => {
     var weaterImage
     switch (weather) {
         case "01d":
@@ -105,11 +105,11 @@ const Weather = ({city, degreesCelsias, weather, autoLocation, humidity, localTi
                 </div>
                 <div>
                     <div className={cls.titleCategory}>Влажность</div>
-                    <div className={cls.valueCategory}>{humidity}</div>
+                    <div className={cls.valueCategory}>{humidity}%</div>
                 </div>
                 <div>
                     <div className={cls.titleCategory}>Дождь</div>
-                    <div className={cls.valueCategory}>58%</div>
+                    <div className={cls.valueCategory}>{rain}мм</div>
                 </div>
                 <div>
                     <div className={cls.titleCategory}>AQ</div>

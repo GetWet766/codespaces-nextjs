@@ -7,7 +7,8 @@ interface GetWeatherProps {
     setCity: Function,
     setDegreesCelsias: Function,
     setHumidity: Function,
-    setLocalTime: Function
+    setLocalTime: Function,
+    setRain: Function
 }
 
 interface WeatherDataObject {
@@ -40,6 +41,10 @@ interface WeatherDataObject {
     },
     timezone:  number,
     visibility:  number,
+    rain?: {
+        "1h": number,
+        "3h": number
+    },
     weather: [
         {
             description: string,
@@ -54,7 +59,7 @@ interface WeatherDataObject {
     }
 }
 
-function getWeather({inputCity, lon, lat, setCity, setDegreesCelsias, setWeather, setAutoLocation, setHumidity, setLocalTime}: GetWeatherProps): void {
+function getWeather({inputCity, lon, lat, setCity, setDegreesCelsias, setWeather, setAutoLocation, setHumidity, setLocalTime, setRain}: GetWeatherProps): void {
     if (!inputCity && !lat && !lon) return
     const API_KEY: string = "d551f5d509a0045cf8cdb61648300237"
     
@@ -71,6 +76,7 @@ function getWeather({inputCity, lon, lat, setCity, setDegreesCelsias, setWeather
           setDegreesCelsias(Math.round(json.main.temp))
           setLocalTime(json.timezone)
           setHumidity(Math.round(json.main.humidity))
+          setRain(Math.round(json.rain[0]))
         })
         .catch(reason => console.log(reason))
     if (!inputCity && lat && lon)
@@ -86,6 +92,7 @@ function getWeather({inputCity, lon, lat, setCity, setDegreesCelsias, setWeather
           setDegreesCelsias(Math.round(json.main.temp))
           setLocalTime(json.timezone)
           setHumidity(Math.round(json.main.humidity))
+          setRain(Math.round(json.rain[0]))
         })
         .catch(reason => console.log(reason))
   }

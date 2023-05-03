@@ -12,13 +12,14 @@ import { useEffect, useState } from 'react'
 import { useGeolocated } from "react-geolocated";
 
 function Home() {
-  const [autoLocation, setAutoLocation] = useState(false)
   const [inputCity, setInputCity] = useState("")
-  const [city, setCity] = useState("?")
   const [weather, setWeather] = useState("Clouds")
+  const [city, setCity] = useState("?")
+  const [autoLocation, setAutoLocation] = useState(false)
   const [degreesCelsias, setDegreesCelsias] = useState("?")
-  const [humidity, setHumidity] = useState("?")
   const [localTime, setLocalTime] = useState("?")
+  const [humidity, setHumidity] = useState("?")
+  const [rain, setRain] = useState("?")
   const { coords, isGeolocationAvailable, isGeolocationEnabled } = useGeolocated({
     positionOptions: {
       enableHighAccuracy: false,
@@ -38,7 +39,8 @@ function Home() {
             setCity: setCity,
             setDegreesCelsias: setDegreesCelsias,
             setHumidity: setHumidity,
-            setLocalTime: setLocalTime
+            setLocalTime: setLocalTime,
+            setRain: setRain
           })
   }, [coords, isGeolocationAvailable, isGeolocationEnabled])
 
@@ -48,8 +50,8 @@ function Home() {
         <title>Прогноз погоды</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Search setWeather={setWeather} inputCity={inputCity} setInputCity={setInputCity} setCity={setCity} setDegreesCelsias={setDegreesCelsias} setAutoLocation={setAutoLocation} setHumidity={setHumidity} setLocalTime={setLocalTime} />
-      <Weather city={city} degreesCelsias={degreesCelsias} weather={weather} autoLocation={autoLocation} humidity={humidity} localTime={localTime} />
+      <Search setWeather={setWeather} inputCity={inputCity} setInputCity={setInputCity} setCity={setCity} setDegreesCelsias={setDegreesCelsias} setAutoLocation={setAutoLocation} setHumidity={setHumidity} setLocalTime={setLocalTime} setRain={setRain} />
+      <Weather city={city} degreesCelsias={degreesCelsias} weather={weather} autoLocation={autoLocation} humidity={humidity} localTime={localTime} rain={rain} />
     </Window>
   )
 }
