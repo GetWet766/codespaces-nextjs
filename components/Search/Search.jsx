@@ -3,7 +3,7 @@ import cls from './Search.module.css'
 import img from '../../img/search-icon.png'
 import getWeather from '../../hooks/getWeather'
 
-const Search = ({setWeather, inputCity, setInputCity, setCity, setDegreesCelsias, setAutoLocation, setHumidity}) => {
+const Search = ({setWeather, inputCity, setInputCity, setCity, setDegreesCelsias, setAutoLocation, setHumidity, setLocalTime}) => {
     return (
         <div className={cls.search}>
             <input
@@ -19,7 +19,8 @@ const Search = ({setWeather, inputCity, setInputCity, setCity, setDegreesCelsias
                     setDegreesCelsias: setDegreesCelsias,
                     setWeather: setWeather,
                     setAutoLocation: setAutoLocation,
-                    setHumidity: setHumidity
+                    setHumidity: setHumidity,
+                    setLocalTime: setLocalTime
                 })}}
             />
             <div className={cls.buttonSearch} id="search-button" onClick={() => getWeather({
@@ -28,7 +29,8 @@ const Search = ({setWeather, inputCity, setInputCity, setCity, setDegreesCelsias
                 setDegreesCelsias: setDegreesCelsias,
                 setWeather: setWeather,
                 setAutoLocation: setAutoLocation,
-                setHumidity: setHumidity
+                setHumidity: setHumidity,
+                setLocalTime: setLocalTime
             })}>
                 <img src={img.src} alt="" />
             </div>

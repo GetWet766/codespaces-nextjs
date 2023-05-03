@@ -18,6 +18,7 @@ function Home() {
   const [weather, setWeather] = useState("Clouds")
   const [degreesCelsias, setDegreesCelsias] = useState("?")
   const [humidity, setHumidity] = useState("?")
+  const [localTime, setLocalTime] = useState("?")
   const { coords, isGeolocationAvailable, isGeolocationEnabled } = useGeolocated({
     positionOptions: {
       enableHighAccuracy: false,
@@ -36,7 +37,8 @@ function Home() {
             setWeather: setWeather,
             setCity: setCity,
             setDegreesCelsias: setDegreesCelsias,
-            setHumidity: setHumidity
+            setHumidity: setHumidity,
+            setLocalTime: setLocalTime
           })
   }, [coords, isGeolocationAvailable, isGeolocationEnabled])
 
@@ -46,8 +48,8 @@ function Home() {
         <title>Прогноз погоды</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Search setWeather={setWeather} inputCity={inputCity} setInputCity={setInputCity} setCity={setCity} setDegreesCelsias={setDegreesCelsias} setAutoLocation={setAutoLocation} setHumidity={setHumidity} />
-      <Weather city={city} degreesCelsias={degreesCelsias} weather={weather} autoLocation={autoLocation} humidity={humidity} />
+      <Search setWeather={setWeather} inputCity={inputCity} setInputCity={setInputCity} setCity={setCity} setDegreesCelsias={setDegreesCelsias} setAutoLocation={setAutoLocation} setHumidity={setHumidity} setLocalTime={setLocalTime} />
+      <Weather city={city} degreesCelsias={degreesCelsias} weather={weather} autoLocation={autoLocation} humidity={humidity} localTime={localTime} />
     </Window>
   )
 }

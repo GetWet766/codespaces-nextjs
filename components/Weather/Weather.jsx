@@ -11,7 +11,7 @@ import mist from '../../img/Mist.png'
 import snow from '../../img/Snow.png'
 import rain from '../../img/Rain.png'
 
-const Weather = ({city, degreesCelsias, weather, autoLocation, humidity}) => {
+const Weather = ({city, degreesCelsias, weather, autoLocation, humidity, localTime}) => {
     var weaterImage
     switch (weather) {
         case "Clear":
@@ -49,7 +49,7 @@ const Weather = ({city, degreesCelsias, weather, autoLocation, humidity}) => {
             <div className={cls.information}>
                 <div>
                     <div className={cls.titleCategory}>Время</div>
-                    <div className={cls.valueCategory}>11:25</div>
+                    <div className={cls.valueCategory}>{calcTime(localTime)}</div>
                 </div>
                 <div>
                     <div className={cls.titleCategory}>Влажность</div>
@@ -66,6 +66,16 @@ const Weather = ({city, degreesCelsias, weather, autoLocation, humidity}) => {
             </div>
         </div>
       )
+}
+
+function calcTime(offset) {
+    var d = new Date();
+
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+    var nd = new Date(utc + (1000*offset));
+
+    return nd.getHours() + ":" + nd.getMinutes();
 }
 
 export default Weather
