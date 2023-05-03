@@ -12,6 +12,7 @@ function searchSubmit(inputCity, setCity, setDegreesCelsias, setWeather, lat, lo
         setCity(json.name)
         setWeather(json.weather[0].main)
         setDegreesCelsias(parseInt(json.main.temp))
+        setAutoLocation(false)
       })
       .catch(reason => console.log(reason))
   if (inputCity === "" & lat !== "" & lon !== "")
