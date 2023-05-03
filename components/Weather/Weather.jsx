@@ -11,7 +11,7 @@ import mist from '../../img/Mist.png'
 import snow from '../../img/Snow.png'
 import rain from '../../img/Rain.png'
 
-const Weather = ({city, degreesCelsias, weather}) => {
+const Weather = ({city, degreesCelsias, weather, autoLocation}) => {
     var weaterImage
     switch (weather) {
         case "Clear":
@@ -40,7 +40,7 @@ const Weather = ({city, degreesCelsias, weather}) => {
             </div>
             <Title>
                 {city}
-                <img className={cls.imgNavigation} src={navIcon.src} alt="" />
+                {autoLocation ? <img className={cls.imgNavigation} src={navIcon.src} alt="" /> : ""}
             </Title>
             <div className={cls.celsius}>
                 {degreesCelsias}

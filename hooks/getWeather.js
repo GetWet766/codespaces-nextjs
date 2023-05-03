@@ -1,4 +1,4 @@
-function searchSubmit(inputCity, setCity, setDegreesCelsias, setWeather, lat, lon) {
+function searchSubmit(inputCity, setCity, setDegreesCelsias, setWeather, lat, lon, setAutoLocation) {
   if (inputCity === "" & lat === "" & lon === "") return
   const API_KEY = "d551f5d509a0045cf8cdb61648300237"
   
@@ -24,6 +24,7 @@ function searchSubmit(inputCity, setCity, setDegreesCelsias, setWeather, lat, lo
         setCity(json.name)
         setWeather(json.weather[0].main)
         setDegreesCelsias(parseInt(json.main.temp))
+        setAutoLocation(true)
       })
       .catch(reason => console.log(reason))
 }

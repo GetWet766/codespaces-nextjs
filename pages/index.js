@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import { useGeolocated } from "react-geolocated";
 
 function Home() {
+  const [autoLocation, setAutoLocation] = useState(false)
   const [inputCity, setInputCity] = useState("")
   const [city, setCity] = useState("?")
   const [weather, setWeather] = useState("Clouds")
@@ -25,7 +26,7 @@ function Home() {
     !isGeolocationAvailable ? null :
       !isGeolocationEnabled ? null :
         !coords ? null :
-          getWeather("", setCity, setDegreesCelsias, setWeather, coords.latitude, coords.longitude)
+          getWeather("", setCity, setDegreesCelsias, setWeather, coords.latitude, coords.longitude, setAutoLocation)
   }, [coords, isGeolocationAvailable, isGeolocationEnabled])
 
   return (
@@ -34,8 +35,8 @@ function Home() {
         <title>Прогноз погоды</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Search setWeather={setWeather} inputCity={inputCity} setInputCity={setInputCity} setCity={setCity} setDegreesCelsias={setDegreesCelsias} />
-      <Weather city={city} degreesCelsias={degreesCelsias} weather={weather} />
+      <Search setWeather={setWeather} inputCity={inputCity} setInputCity={setInputCity} setCity={setCity} setDegreesCelsias={setDegreesCelsias} setAutoLocation={setAutoLocation} />
+      <Weather city={city} degreesCelsias={degreesCelsias} weather={weather} autoLocation={autoLocation} />
     </Window>
   )
 }
