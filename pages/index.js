@@ -19,13 +19,15 @@ function Home() {
       enableHighAccuracy: false,
     },
      userDecisionTimeout: 5000,
-  });
+  })
+  
   useEffect(() => {
     !isGeolocationAvailable ? null :
       !isGeolocationEnabled ? null :
-        coords ? getWeather("", setCity, setDegreesCelsias, setWeather, coords.latitude, coords.longitude) : null
-  }, [])
-  
+        !coords ? null :
+          getWeather("", setCity, setDegreesCelsias, setWeather, coords.latitude, coords.longitude)
+  }, [coords, isGeolocationAvailable, isGeolocationEnabled])
+
   return (
     <Window>
       <Head>
