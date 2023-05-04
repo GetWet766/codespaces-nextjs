@@ -8,53 +8,54 @@ import logo384 from "../img/logo-384x384.png"
 import logo512 from "../img/logo-512x512.png"
 
 const Manifest = () : string => {
+  const url: string = "https://weather-testing-app.vercel.app/"
   return JSON.stringify({
     name: "Погода на день",
     short_name: "Погода",
     description: "Погодные условия",
-    start_url: "https://weather-testing-app.vercel.app/",
+    start_url: url,
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#ffffff",
     orientation: "portrait",
     icons: [
       {
-        src: "https://weather-testing-app.vercel.app/"+logo72.src,
+        src: url+logo72.src,
         type: "image/png",
         sizes: "72x72"
       },
       {
-        src: logo96.src,
+        src: url+logo96.src,
         type: "image/png",
         sizes: "96x96"
       },
       {
-        src: logo128.src,
+        src: url+logo128.src,
         type: "image/png",
         sizes: "128x128"
       },
       {
-        src: logo144.src,
+        src: url+logo144.src,
         type: "image/png",
         sizes: "144x144"
       },
       {
-        src: logo152.src,
+        src: url+logo152.src,
         type: "image/png",
         sizes: "152x152"
       },
       {
-        src: logo192.src,
+        src: url+logo192.src,
         type: "image/png",
         sizes: "192x192"
       },
       {
-        src: logo384.src,
+        src: url+logo384.src,
         type: "image/png",
         sizes: "384x384"
       },
       {
-        src: logo512.src,
+        src: url+logo512.src,
         type: "image/png",
         sizes: "512x512"
       }
