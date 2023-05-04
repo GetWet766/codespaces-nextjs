@@ -28,8 +28,28 @@ function Home() {
   })
   
   useEffect(() => {
-    !isGeolocationAvailable ? null :
-      !isGeolocationEnabled ? null :
+    !isGeolocationAvailable ?
+      getWeather({
+        inputCity: "Москва",
+        setAutoLocation: setAutoLocation,
+        setWeather: setWeather,
+        setCity: setCity,
+        setDegreesCelsias: setDegreesCelsias,
+        setHumidity: setHumidity,
+        setLocalTime: setLocalTime,
+        setRain: setRain
+      }) :
+      !isGeolocationEnabled ?
+        getWeather({
+          inputCity: "Москва",
+          setAutoLocation: setAutoLocation,
+          setWeather: setWeather,
+          setCity: setCity,
+          setDegreesCelsias: setDegreesCelsias,
+          setHumidity: setHumidity,
+          setLocalTime: setLocalTime,
+          setRain: setRain
+        }) :
         !coords ? null :
           getWeather({
             lat: coords.latitude,

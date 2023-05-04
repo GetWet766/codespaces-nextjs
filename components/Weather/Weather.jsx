@@ -109,7 +109,7 @@ const Weather = ({city, degreesCelsias, weather, autoLocation, humidity, localTi
                 </div>
                 <div>
                     <div className={cls.titleCategory}>Дождь</div>
-                    <div className={cls.valueCategory}>{rain}мм</div>
+                    <div className={cls.valueCategory}>{rain} мм</div>
                 </div>
                 <div>
                     <div className={cls.titleCategory}>AQ</div>
