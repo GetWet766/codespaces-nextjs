@@ -9,6 +9,7 @@ import manifest from "../hooks/manifest";
 import getWeather from '../hooks/getWeather'
 
 import Head from 'next/head'
+import Favicon from "react-favicon";
 
 import { useEffect, useState } from 'react'
 import { useGeolocated } from "react-geolocated";
@@ -67,12 +68,20 @@ function Home() {
           })
   }, [coords, isGeolocationAvailable, isGeolocationEnabled])
 
+  const favIconsJSON = JSON.parse(manifest()).icons
+  var favIconsArray: String[] = []
+
+  favIconsJSON.forEach(element => {
+    favIconsArray.push(element.src)
+  });
+
   return (
     <Window>
       <Head>
         <title>Прогноз погоды</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="manifest" href={"data:application/json;charset=utf-8," + encodeURIComponent(manifest())} />
+        <Favicon url={favIconsArray} />
       </Head>
       <Search setWeather={setWeather} inputCity={inputCity} setInputCity={setInputCity} setCity={setCity} setDegreesCelsias={setDegreesCelsias} setAutoLocation={setAutoLocation} setHumidity={setHumidity} setLocalTime={setLocalTime} setRain={setRain} />
       <Weather city={city} degreesCelsias={degreesCelsias} weather={weather} autoLocation={autoLocation} humidity={humidity} localTime={localTime} rain={rain} />
