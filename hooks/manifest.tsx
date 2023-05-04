@@ -19,7 +19,7 @@ const Manifest = () : string => {
     orientation: "portrait",
     icons: [
       {
-        src: logo72.src,
+        src: "https://weather-testing-app.vercel.app/"+logo72.src,
         type: "image/png",
         sizes: "72x72"
       },
