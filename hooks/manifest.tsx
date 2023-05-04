@@ -8,12 +8,12 @@ import logo384 from "../img/logo-384x384.png"
 import logo512 from "../img/logo-512x512.png"
 
 const Manifest = () : string => {
-  const url: string = "https://weather-testing-app.vercel.app/"
+  const url: string = "https://weather-testing-app.vercel.app"
   return JSON.stringify({
     name: "Погода на день",
     short_name: "Погода",
     description: "Погодные условия",
-    start_url: url,
+    start_url: url+"/",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#ffffff",

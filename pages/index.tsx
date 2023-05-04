@@ -74,6 +74,7 @@ function Home() {
   favIconsJSON.forEach(element => {
     favIconsArray.push(element.src)
   });
+  console.log(favIconsArray);
 
   return (
     <Window>
