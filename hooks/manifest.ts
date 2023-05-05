@@ -13,32 +13,32 @@ const Manifest = () : string => {
     orientation: "portrait",
     icons: [
       {
-        src: url+favicons["faviconManifest36"],
+        src: url+favicons.faviconManifest36,
         type: "image/png",
         sizes: "36x36"
       },
       {
-        src: url+favicons["faviconManifest48"],
+        src: url+favicons.faviconManifest48,
         type: "image/png",
         sizes: "48x48"
       },
       {
-        src: url+favicons["faviconManifest72"],
+        src: url+favicons.faviconManifest72,
         type: "image/png",
         sizes: "72x72"
       },
       {
-        src: url+favicons["faviconManifest144"],
+        src: url+favicons.faviconManifest144,
         type: "image/png",
         sizes: "144x144"
       },
       {
-        src: url+favicons["faviconManifest192"],
+        src: url+favicons.faviconManifest192,
         type: "image/png",
         sizes: "192x192"
       },
       {
-        src: url+favicons["faviconManifest512"],
+        src: url+favicons.faviconManifest512,
         type: "image/png",
         sizes: "512x512"
       }

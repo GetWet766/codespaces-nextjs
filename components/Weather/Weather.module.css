@@ -67,3 +67,12 @@
   color: #9a9a9a;
   font-weight: bold;
 }
+
+@media (max-width: 576px) {
+  .weather {
+    width: 100%;
+  }
+  .information {
+    width: 100%;
+  }
+}

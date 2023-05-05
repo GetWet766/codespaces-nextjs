@@ -6,3 +6,12 @@
   margin: 50px auto;
   padding-top: 45px;
 }
+
+@media (max-width: 576px) {
+  .window {
+    width: 100%;
+    padding: 25px;
+    margin: 0;
+    border-radius: 0;
+  }
+}

@@ -24,7 +24,35 @@ import faviconMS70 from "../img/ms-icon-70x70.png"
 import faviconMS150 from "../img/ms-icon-150x150.png"
 import faviconMS310 from "../img/ms-icon-310x310.png"
 
-const Favicons: object = {
+interface FaviconsObject {
+    favicon: string,
+    favicon16: string,
+    favicon32: string,
+    favicon96: string,
+    favicon120: string,
+    faviconManifest36: string,
+    faviconManifest48: string,
+    faviconManifest72: string,
+    faviconManifest96: string,
+    faviconManifest144: string,
+    faviconManifest192: string,
+    faviconManifest512: string,
+    faviconApple57: string,
+    faviconApple60: string,
+    faviconApple72: string,
+    faviconApple76: string,
+    faviconApple114: string,
+    faviconApple120: string,
+    faviconApple144: string,
+    faviconApple152: string,
+    faviconApple180: string,
+    faviconMSTile: string,
+    faviconMS70: string,
+    faviconMS150: string,
+    faviconMS310: string,
+}
+
+const Favicons: FaviconsObject = {
         favicon: favicon.src,
         favicon16: favicon16.src,
         favicon32: favicon32.src,
