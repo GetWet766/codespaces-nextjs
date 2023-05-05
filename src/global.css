@@ -1,0 +1,14 @@
+html,
+body,
+* {
+  font-family: "SF Pro Text", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  width: 100%;
+  background: #ffffff;
+}
